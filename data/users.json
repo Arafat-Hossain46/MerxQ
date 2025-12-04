@@ -1,0 +1,9 @@
+[
+  {
+    "id": "U001",
+    "name": "Admin",
+    "email": "admin@merxq.com",
+    "password": "admin123",
+    "userType": "admin"
+  }
+]

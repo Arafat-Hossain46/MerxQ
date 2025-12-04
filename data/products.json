@@ -1,0 +1,26 @@
+[
+    {
+        "id": "P001",
+        "name": "iPhone 15 Pro",
+        "category": "Electronics",
+        "description": "Latest Apple smartphone with A17 Pro chip",
+        "price": 1299.99,
+        "quantity": 25
+    },
+    {
+        "id": "P002",
+        "name": "Samsung Galaxy S24",
+        "category": "Electronics",
+        "description": "Flagship Android phone with AI features",
+        "price": 999.99,
+        "quantity": 30
+    },
+    {
+        "id": "P003",
+        "name": "MacBook Air M3",
+        "category": "Computers",
+        "description": "Lightweight laptop with M3 chip",
+        "price": 1499.99,
+        "quantity": 15
+    }
+]
