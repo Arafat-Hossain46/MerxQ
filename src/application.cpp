@@ -1,7 +1,5 @@
 #include "../include/application.h"
 #include "../include/exceptions.h"
-#include <iomanip>
-#include <sstream>
 
 // ============================================
 // CONSTRUCTOR
