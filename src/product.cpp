@@ -52,3 +52,40 @@ void Product::displayInfo() const {
        << endl;
 }
 
+void Product::displayShort() const {
+  stringstream priceStr;
+  priceStr << fixed << setprecision(2) << price;
+
+  string stockStatus =
+      quantity > 0
+          ? Utils::colorText("[" + to_string(quantity) + " in stock]", "green")
+          : Utils::colorText("[Out of Stock]", "red");
+
+  cout << Utils::colorText(id, "yellow") << " | "
+       << Utils::colorText(name, "white", "", "bold") << " | "
+       << Utils::colorText("$" + priceStr.str(), "green") << " | "
+       << Utils::colorText(category, "magenta") << " " << stockStatus << endl;
+}
+
+// ============================================
+// STOCK MANAGEMENT
+// ============================================
+
+void Product::reduceStock(int amount) {
+  if (amount <= 0) {
+    throw InvalidInputException("Amount must be positive");
+  }
+  if (quantity < amount) {
+    throw InsufficientStockException("Not enough stock for " + name);
+  }
+  quantity -= amount;
+}
+
+void Product::addStock(int amount) {
+  if (amount <= 0) {
+    throw InvalidInputException("Amount must be positive");
+  }
+  quantity += amount;
+}
+
+
