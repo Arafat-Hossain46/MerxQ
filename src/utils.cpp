@@ -1,9 +1,16 @@
 #include "../include/utils.h"
-#include <cstdlib> // for system()
+#include <cstdlib>
 #include <iostream>
-#include <limits> // for numeric_limits
+#include <limits>
 #include <map>
-#include <unistd.h> // for sleep on Unix/Mac
+
+#ifdef _WIN32
+#include <windows.h>
+#define SLEEP_MS(ms) Sleep(ms)
+#else
+#include <unistd.h>
+#define SLEEP_MS(ms) usleep((ms) * 1000)
+#endif
 
 using namespace std;
 
@@ -110,7 +117,7 @@ void Utils::showLoading(const string &message, int seconds) {
 
   for (int i = 0; i < seconds * 2; i++) {
     cout << colorText(".", "yellow") << flush;
-    usleep(500000); // Sleep for 0.5 seconds (500,000 microseconds)
+    SLEEP_MS(500); // Sleep for 0.5 seconds
   }
 
   cout << endl;
